@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .view {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            float: left;
+            border: 10px solid #fff;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            box-shadow: 1px 1px 2px #e6e6e6;
+            cursor: default;
+            background: #ADD8E6; /* Light blue background */
+        }
+
+        .view .mask, .view .content {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: -300px; /* Start mask off the left */
+            background-color: rgba(135, 206, 235, 0.7);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .view img {
+            display: block;
+            position: relative;
+            transition: all 0.2s linear;
+        }
+
+        .view h2 {
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px 0 0 0;
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .view p {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 12px;
+            position: relative;
+            color: #fff;
+            padding: 10px 20px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.2s linear;
+        }
+
+        .view a.info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 14px;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0 0 1px #000;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .view a.info:hover {
+            box-shadow: 0 0 5px #000;
+        }
+
+        /* Hover effect */
+        .view:hover img {
+            transform: scale(1.1);
+        }
+
+        .view:hover .mask {
+            left: 0; /* Slide mask in from left */
+            opacity: 1;
+        }
+
+        .view:hover h2, .view:hover p, .view:hover a.info {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .view:hover p {
+            transition-delay: 0.1s;
+        }
+
+        .view:hover a.info {
+            transition-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="view view-first">
+        <img src="./bt-3.png" alt="Background Image" />
+        <div class="mask">
+            <h2>Title</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>
+</body>
+</html>

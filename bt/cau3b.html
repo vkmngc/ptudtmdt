@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .view-seventh {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            background: #ADD8E6; /* Light blue background */
+        }
+
+        .view-seventh img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s ease-out;
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .view-seventh .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(77, 44, 35, 0.5);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            transform: translateY(-200px) rotate(180deg);
+        }
+
+        .view-seventh h2, .view-seventh p, .view-seventh a.info {
+            color: #fff;
+            position: relative;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            transform: translateY(-200px);
+        }
+
+        .view-seventh h2 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .view-seventh p {
+            font-size: 12px;
+            margin: 10px;
+        }
+
+        .view-seventh a.info {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* Hover effects */
+        .view-seventh:hover img {
+            transform: rotate(720deg) scale(1); /* Image rotates and remains scaled after animation */
+            opacity: 1;
+        }
+
+        .view-seventh:hover .mask {
+            opacity: 1;
+            transform: translateY(0px) rotate(360deg); /* Mask rotates to 360 degrees */
+            transition-delay: 0.4s;
+        }
+
+        .view-seventh:hover h2 {
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.7s;
+        }
+
+        .view-seventh:hover p {
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.6s;
+        }
+
+        .view-seventh:hover a.info {
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="view view-seventh">
+        <img src="./bt-3.png" alt="Background Image" />
+        <div class="mask">
+            <h2>Hover Style #7</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>
+</body>
+</html>

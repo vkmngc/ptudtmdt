@@ -439,11 +439,21 @@ p {
 	margin-bottom: 20px;
 }
 #about .col-right .cta {
-	color: black;
-	margin-bottom: 50px;
+	color: rgb(0, 0, 0);
+	margin-bottom: 20px;
 	padding: 10px 20px;
 	font-size: 2rem;
 }
+
+#about .col-right .cta:hover {
+	transition: 0.1s ease;
+	color: rgb(255, 255, 255);
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	font-size: 2rem;
+}
+
+
 #about .col-left .about-img {
 	height: 100%;
 	width: 100%;
@@ -586,7 +596,7 @@ p {
 @media only screen and (min-width: 768px) {
 	.cta {
 		font-size: 2rem;
-		padding: 20px 60px;
+		padding: 20px 40px;
 	}
 	h1.section-title {
 		font-size: 6rem;
