@@ -306,7 +306,7 @@ p {
 	flex-direction: column;
 	padding: 30px;
 	border-radius: 10px;
-	background-image: url(./img/img-1.png);
+	background-image: url(./img/bg.jpg);
 	background-size: cover;
 	margin: 10px 5%;
 	position: relative;
@@ -325,8 +325,10 @@ p {
 	z-index: -1;
 }
 
-#services .service-item::after:hover {
+#services .service-item:hover {
 	transform: scale(1.1);
+	transition: 0.1s ease;
+	box-shadow: 7px 7px 5px 5px #0000002c;
 }
 
 #services .service-bottom .icon {
@@ -432,6 +434,10 @@ p {
 	width: 250px;
 	height: 360px;
 }
+	#about .col-left:hover {
+		transform: scale(1.1);
+		transition: 0.1s ease;
+}
 #about .col-right {
 	width: 100%;
 }
@@ -466,6 +472,7 @@ p {
 	position: relative;
 	border: 10px solid white;
 }
+
 #about .col-left .about-img::after {
 	content: '';
 	position: absolute;
