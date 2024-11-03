@@ -33,7 +33,7 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
-	font-size: 4rem;
+	font-size: 4em;
 	font-weight: 300;
 	color: black;
 	margin-bottom: 10px;
@@ -42,7 +42,7 @@ p {
 	text-align: center;
 }
 .section-title span {
-	color: crimson;
+	color: #920404;
 }
 
 .cta {
@@ -50,7 +50,7 @@ p {
 	padding: 10px 30px;
 	color: white;
 	background-color: transparent;
-	border: 2px solid crimson;
+	border: 2px solid white;
 	font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
@@ -60,7 +60,8 @@ p {
 }
 .cta:hover {
 	color: white;
-	background-color: crimson;
+	background-image: linear-gradient(60deg, #920404 20%, #ffca3d 100%);
+	<! -- border: 2px solid #920404; -->
 }
 .brand h1 {
 	font-size: 3rem;
@@ -68,7 +69,7 @@ p {
 	color: white;
 }
 .brand h1 span {
-	color: crimson;
+	color: #920404;
 }
 
 /* Header section */
@@ -115,7 +116,7 @@ p {
 }
 #header .nav-list ul a {
 	font-size: 2.5rem;
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: 0.2rem;
 	text-decoration: none;
 	color: white;
@@ -128,7 +129,7 @@ p {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
+	transform: translate(-10%, -10%) scale(0);
 	color: rgba(240, 248, 255, 0.021);
 	font-size: 13rem;
 	letter-spacing: 50px;
@@ -140,7 +141,7 @@ p {
 	letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-	color: crimson;
+	color: #ffca3d;
 }
 #header .hamburger {
 	height: 60px;
@@ -200,7 +201,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/hero-bg.png);
+	background-image: url(./img/1.JPG);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -213,8 +214,8 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: black;
-	opacity: 0.7;
+	background-color: rgb(148, 148, 148);
+	opacity: 0.5;
 	z-index: -1;
 }
 #hero .hero {
@@ -223,6 +224,17 @@ p {
 	padding: 0 50px;
 	justify-content: flex-start;
 }
+
+#hero .logo-img {
+	flex-basis: 50%;
+	height: 30px;
+	width: 30px;
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+
+
 #hero h1 {
 	display: block;
 	width: fit-content;
@@ -248,7 +260,7 @@ p {
 	left: 0;
 	height: 100%;
 	width: 0;
-	background-color: crimson;
+	background-color: #920404;
 	animation: text_reveal_box 1s ease;
 	animation-delay: 0.5s;
 }
@@ -262,6 +274,8 @@ p {
 	animation-delay: 2.5s;
 }
 
+
+
 /* End Hero Section */
 
 /* Services Section */
@@ -273,7 +287,7 @@ p {
 	padding: 100px 0;
 }
 #services .service-top {
-	max-width: 500px;
+	max-width: 700px;
 	margin: 0 auto;
 }
 #services .service-bottom {
@@ -305,7 +319,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #920404 20%, #ffca3d 100%);
 	opacity: 0.9;
 	z-index: -1;
 }
@@ -313,6 +327,7 @@ p {
 	height: 80px;
 	width: 80px;
 	margin-bottom: 20px;
+	align-items: center;
 }
 #services .service-item h2 {
 	font-size: 2rem;
@@ -442,7 +457,7 @@ p {
 	top: 19px;
 	height: 98%;
 	width: 98%;
-	border: 7px solid crimson;
+	border: 7px solid #920404;
 	z-index: -1;
 }
 /* End About Section */
@@ -560,16 +575,16 @@ p {
 }
 @keyframes text_reveal_name {
 	100% {
-		color: crimson;
+		color: #ffca3d;
 		font-weight: 500;
-	}
+	}5
 }
 /* End Keyframes */
 
 /* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
 	.cta {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		padding: 20px 60px;
 	}
 	h1.section-title {
@@ -624,7 +639,7 @@ p {
 		top: 34px;
 		height: 98%;
 		width: 98%;
-		border: 10px solid crimson;
+		border: 10px solid #920404;
 	}
 	#about .col-right {
 		text-align: left;
@@ -699,4 +714,30 @@ p {
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
+}
+
+@font-face {
+    font-family: 'NVN Black Mango';
+    src: url('./fonts/NVNBlackMango-Regular.eot');
+    src: url('./fonts/NVNBlackMango-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/NVNBlackMango-Regular.woff2') format('woff2'),
+        url('./fonts/NVNBlackMango-Regular.woff') format('woff'),
+        url('./fonts/NVNBlackMango-Regular.ttf') format('truetype'),
+        url('./fonts/NVNBlackMango-Regular.svg#NVNBlackMango-Regular') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'themify';
+    src: url('./fonts/themify.eot');
+    src: url('./fonts/themify.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/themify.woff2') format('woff2'),
+        url('./fonts/themify.woff') format('woff'),
+        url('./fonts/themify.ttf') format('truetype'),
+        url('./fonts/themify.svg#themify') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
