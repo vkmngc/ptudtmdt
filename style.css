@@ -375,7 +375,7 @@ p {
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #920404 20%, #ffca3d 100%);
 	color: white;
 }
 #projects .project-info h1 {
@@ -714,30 +714,4 @@ p {
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
-}
-
-@font-face {
-    font-family: 'NVN Black Mango';
-    src: url('./fonts/NVNBlackMango-Regular.eot');
-    src: url('./fonts/NVNBlackMango-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/NVNBlackMango-Regular.woff2') format('woff2'),
-        url('./fonts/NVNBlackMango-Regular.woff') format('woff'),
-        url('./fonts/NVNBlackMango-Regular.ttf') format('truetype'),
-        url('./fonts/NVNBlackMango-Regular.svg#NVNBlackMango-Regular') format('svg');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'themify';
-    src: url('./fonts/themify.eot');
-    src: url('./fonts/themify.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/themify.woff2') format('woff2'),
-        url('./fonts/themify.woff') format('woff'),
-        url('./fonts/themify.ttf') format('truetype'),
-        url('./fonts/themify.svg#themify') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
 }
