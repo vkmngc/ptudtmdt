@@ -1,0 +1,287 @@
+:root {
+    --color-block-1: #7B93DB;
+    --color-block-2: #4C63B6;
+    --color-block-3: #2D3A8C;
+    --color-block-4: #EF4E4E;
+    --color-text-light: #F5F7FA;
+    --color-text-dark: #3E4C59;
+    --color-back: #F5F7FA;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+aside,
+p,
+main,
+nav,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: var(--color-text-dark);
+    background-color: var(--color-back);
+}
+
+h2,
+h3,
+h4 {
+    font-weight: 300;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* Các cột với độ rộng khác nhau */
+    grid-template-rows: 175px 75px 175px 275px;
+    /* Chiều cao các hàng */
+    grid-gap: 25px;
+    /* Khoảng cách giữa các ô */
+    padding: 25px;
+}
+
+.container>div {
+    background-color: #616E7C;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    padding: 1.5em;
+    box-shadow: 2px 2px 2px 2px hsla(0, 0%, 75%, 0.2);
+    display: flex;
+    /* Use flexbox for center alignment */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* For positioning elements within cells */
+}
+
+
+/* Grid area definitions */
+
+#a {
+    grid-column: span 1;
+    /* Span two columns for cell A */
+    grid-row: 1;
+    /* Row 1 */
+    background-image: url('a.jpg');
+}
+
+#b {
+    grid-column: 2 / 4;
+    /* Columns 3 to 5 */
+    grid-row: 1;
+    /* Row 1 */
+    background-image: url('b.jpg');
+}
+
+#c {
+    grid-column: 4 / 6;
+    /* Columns 5 to 7 */
+    grid-row: 1;
+    /* Row 1 */
+    background-image: url('c.jpg');
+}
+
+#d {
+    grid-column: 6 / 8;
+    /* Columns 7 to 10 */
+    grid-row: 1;
+    /* Row 1 */
+    background-color: #4C63B6;
+    /* Background color for D */
+}
+
+#e {
+    grid-column: 8 / 9;
+    /* Columns 1 to 4 */
+    grid-row: 1;
+    /* Row 2 */
+    background-image: url('e.jpg');
+}
+
+#f {
+    grid-column: 9 / 10;
+    /* Columns 4 to 7 */
+    grid-row: 1;
+    /* Row 2 */
+    background-image: url('f.jpg');
+}
+
+#g {
+    grid-column: 1 / 2;
+    /* Columns 7 to 10 */
+    grid-row: 2 / 4;
+    /* Row 2 - 3 */
+    background-image: url('g.jpg');
+}
+
+#h {
+    grid-column: 2 / 6;
+    /* Columns 1 to 4 */
+    grid-row: 2 / 4;
+    /* Row 2 - 3*/
+    background-image: url('h.jpg');
+}
+
+#i {
+    grid-column: 6 / 7;
+    /* Columns 6 to 7 */
+    grid-row: 2;
+    /* Row 2 */
+    background-color: #2D3A8C;
+    /* Background color for I */
+}
+
+#j {
+    grid-column: 7 / 8;
+    /* Columns 7 to 8 */
+    grid-row: 2;
+    /* Row 2 */
+    background-color: #EF4E4E;
+    /* Background color for J */
+}
+
+#k {
+    grid-column: 8 / 10;
+    /* Columns 8 to 10 */
+    grid-row: 2;
+    /* Row 2 */
+}
+
+#l {
+    grid-column: 6 / 8;
+    /* Columns 6 to 8 */
+    grid-row: 3;
+    /* Row 3 */
+    background-image: url('l.jpg');
+}
+
+#m {
+    grid-column: 8 / 10;
+    /* Columns 8 to 10 */
+    grid-row: 3;
+    /* Row 3 */
+    background-image: url('m.jpg');
+}
+
+#n {
+    grid-column: 1 / 2;
+    /* Columns 8 to 10 */
+    grid-row: 4;
+    /* Row 4 */
+    background-image: url('n.jpg');
+}
+
+#o {
+    grid-column: 2 / 4;
+    /* Columns 2 to 4 */
+    grid-row: 4;
+    /* Row 4 */
+    background-image: url('o.jpg');
+}
+
+#p {
+    grid-column: 4 / 6;
+    /* Columns 4 to 6 */
+    grid-row: 4;
+    /* Row 4 */
+    background-image: url('p.jpg');
+}
+
+#q {
+    grid-column: 6 / 10;
+    /* Columns 6 to 10 */
+    grid-row: 4;
+    /* Row 4 */
+    background-image: url('q.jpg');
+}
+
+#d,
+#i,
+#j,
+#k {
+    background-color: var(--color-block-3);
+}
+#a,
+#b,
+#c,
+#e,
+#f,
+#g,
+#h,
+#l,
+#m,
+#n,
+#o {
+    background-size: cover;
+    /* Cover the entire cell */
+    background-position: center;
+    /* Center the image within the cell */
+    object-fit: cover;
+}
+
+button {
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+
+/* Specific classes for spanning */
+
+.widthDouble {
+    grid-column: span 2;
+}
+
+.heightDouble {
+    grid-row: span 2;
+}
+
+
+/* Media queries for responsive design */
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(14, 1fr);
+        /* Adjust row heights as needed */
+    }
+    #a,
+    #g,
+    #n {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        /* Adjust row spans as needed */
+    }
+    /* Adjust other cell grid-column and grid-row properties accordingly */
+}
+
+@media only screen and (max-width: 850px) {
+    /* Add more specific styles for smaller screens, such as font size reduction */
+    .container>div {
+        font-size: 0.8em;
+    }
+}
