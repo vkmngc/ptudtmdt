@@ -297,6 +297,7 @@ p {
 	flex-wrap: wrap;
 	margin-top: 50px;
 }
+	
 #services .service-item {
 	flex-basis: 80%;
 	display: flex;
@@ -323,6 +324,11 @@ p {
 	opacity: 0.9;
 	z-index: -1;
 }
+
+#services .service-item::after:hover {
+	transform: scale(1.1);
+}
+
 #services .service-bottom .icon {
 	height: 80px;
 	width: 80px;

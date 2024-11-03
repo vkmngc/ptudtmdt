@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Hiệu ứng slide-in-elliptic-right-bck từ mã CSS Animation Kit */
+        @keyframes slide-in-elliptic-right-bck {
+            0% {
+                transform: translateX(800px) rotateY(30deg) scale(6.5);
+                transform-origin: -100% 50%;
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0) rotateY(0) scale(1);
+                transform-origin: 600px 50%;
+                opacity: 1;
+            }
+        }
+
+
+        /* Hiệu ứng text-shadow-multicolor từ mã CSS Animation Kit */
+        @keyframes text-shadow-multicolor {
+            0% {}
+            33% { text-shadow: 0 0px 15px #0ff; }
+            66% { text-shadow: 0 0px 10px #0f0; }
+            100% { text-shadow: 0 0px 10px #ff0; }
+        }
+
+
+        /* Áp dụng các hiệu ứng */
+        .animated-text {
+            font-size: 3em;
+            color: #3079ed;
+            font-weight: bold;
+           
+            /* Kết hợp hiệu ứng với thứ tự: slide-in-elliptic-right-bck -> text-shadow-multicolor */
+            animation: slide-in-elliptic-right-bck 5s ease-out forwards,
+                       text-shadow-multicolor 5s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animated-text">Đại học UEH</h1>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Hiệu ứng slide-in-elliptic-right-bck từ mã CSS Animation Kit */
+        @keyframes slide-in-elliptic-right-bck {
+            0% {
+                transform: translateX(800px) rotateY(30deg) scale(6.5);
+                transform-origin: -100% 50%;
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0) rotateY(0) scale(1);
+                transform-origin: 600px 50%;
+                opacity: 1;
+            }
+        }
+
+
+        /* Hiệu ứng text-shadow-multicolor từ mã CSS Animation Kit */
+        @keyframes text-shadow-multicolor {
+            0% {}
+            33% { text-shadow: 0 0px 15px #0ff; }
+            66% { text-shadow: 0 0px 10px #0f0; }
+            100% { text-shadow: 0 0px 10px #ff0; }
+        }
+
+
+        /* Hiệu ứng lấp lánh */
+        @keyframes glitter {
+            0%, 100% { text-shadow: 0 0px 15px #ff0; }
+            50% { text-shadow: 0 0px 20px #fff; }
+        }
+
+
+        /* Hiệu ứng nhảy lên */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+
+        /* Áp dụng các hiệu ứng */
+        .animated-text {
+            font-size: 3em; /* Kích thước ban đầu */
+            color: #3079ed; /* Màu chữ ban đầu */
+            font-weight: bold;
+            transition: background-color 0.5s, font-size 0.5s, transform 0.5s; /* Hiệu ứng chuyển tiếp cho hover */
+            animation: slide-in-elliptic-right-bck 5s ease-out forwards,
+                       text-shadow-multicolor 5s ease infinite;
+        }
+
+
+        /* Hiệu ứng khi hover */
+        .animated-text:hover {
+            background-color: red; /* Màu nền khi hover */
+            font-size: 5em; /* Kích thước font khi hover */
+            transform: matrix(1.4, -0.54, 0.54, 1.4, 0, 0) translateY(-5px); /* Biến đổi khi hover */
+            animation: bounce 0.5s forwards, glitter 1s infinite; /* Thêm hiệu ứng nhảy và lấp lánh khi hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animated-text">Đại học UEH</h1>
+</body>
+</html>
