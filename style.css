@@ -421,6 +421,11 @@ p {
 }
 /* End Projects section */
 
+#store .store {
+	color: white;
+	background-image: linear-gradient(60deg, #920404 20%, #ffca3d 100%); ;
+}
+
 /* About Section */
 #about .about {
 	flex-direction: column-reverse;
