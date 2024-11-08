@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <!-- default styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme CSS files as mentioned below (and change the theme property of the plugin) -->
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- important mandatory libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
+
+    <!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme JS files as mentioned below (and change the theme property of the plugin) -->
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.js"></script>
+
+    <!-- optionally if you need translation for your language then include locale file as mentioned below (replace LANG.js with your own locale file) -->
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/locales/LANG.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="xzoom.css">
+    <!-- xZoom CSS -->
+    <style>
+        /* Custom styles for discount and product labels */
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background-color: red;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+        .product-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: green;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Product Detail-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-3">
+                <h3>Trang phục</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">14</span>Áo tấc
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">7</span>Nhật Bình
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">5</span>Mãng Bào
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">2</span>Giao lĩnh
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-8 col-md-9">
+                <div class="thumbnail">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Discount Badge -->
+                            <div class="discount-badge">20%</div>
+                            <!-- Product Label (e.g., New or Best Seller) -->
+                            <div class="product-label">Được quan tâm</div>
+                            <!-- Main Product Image with xZoom -->
+                            <img class="xzoom img-responsive" src="./img/sp-1.jpg" alt="Product Image" />
+                            <div class="thumbnails row">
+                                <!-- Thumbnails with xZoom functionality -->
+                                <div class="col-xs-3">
+                                    <a>
+                                        <img src="./img/d-1.JPG" alt="Thumbnail" class="img-thumbnail img-responsive xzoom-gallery" />
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a>
+                                        <img src="./img/d-2.jpg" alt="Thumbnail" class="img-thumbnail img-responsive xzoom-gallery" />
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a>
+                                        <img src="./img/d-3.jpg" alt="Thumbnail" class="img-thumbnail img-responsive xzoom-gallery" />
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a>
+                                        <img src="./img/d-4.jpg" alt="Thumbnail" class="img-thumbnail img-responsive xzoom-gallery" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <h4 class="pull-right">500.000đ</h4>
+                            <h4><a href="product.html">Nhật Bình đỏ</a></h4>
+                            <p>Nhật bình đỏ đô thêu tay với những họa tiết tinh xảo như một tác phẩm nghệ thuật, tôn lên vẻ đẹp truyền thống và quý phái.</p>
+
+                            <form role="form">
+                                <div class="number form-group">
+                                    <label>Số lượng</label>
+                                    <input type="number" class="input-sm form-control" id="number" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Phụ kiện đi kèm</label>
+                                    <select id="color" class="form-control">
+                                    <option name="color">Mấn 25cm</option>
+                                    <option name="color">Quạt cầm tay</option>
+                                    <option name="color">Dù trắng</option>
+                                    <option name="color">Hoa sen</option>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kích cỡ</label>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default">Người lớn</button>
+                                        <button type="button" class="btn btn-default">Trẻ em</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Liên hệ người bán</button>
+                                    <button type="submit" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviewer Section -->
+    <div class="description">
+        <p>Nhật bình đỏ đô thêu tay với những họa tiết tinh xảo như một tác phẩm nghệ thuật, tôn lên vẻ đẹp truyền thống và quý phái.</p>
+    </div>
+    <div class="ratings">
+        <p class="pull-right"> 5 đánh giá</p>
+        <p>
+            <!--Thay thế star bằng thư viện bootstrap-star-rating-->
+            <input id="input-id" type="text" class="rating" data-size="sm" data-rating="4"> 4.0 sao
+        </p>
+    </div>
+    <div class="well">
+        <div class="text-right">
+            <a class="btn btn-success">Để lại bình luận</a>
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="row">
+        <div class="col-md-12">
+            <!--Thay thế star bằng thư viện bootstrap-star-rating-->
+            <input id="input-id" type="text" class="rating" data-size="sm"> Phương Thanh
+            <span class="pull-right">1 tuần trước</span>
+            <p>Ở <em>Việt Nam</em></p>
+            <p>Sản phẩm rất tuyệt, chất vải tốt, đường thêu tinh tế, cảm giác sang trọng.</p>
+        </div>
+    </div>
+
+    <!-- Other Products Section -->
+    <h3>Các sản phẩm khác</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="./img/sp-2.jpg" alt="Other Product" class="img-responsive">
+                <div class="caption">
+                    <h4><a href="e-commerce-detail.html">Nhật Bình vàng</a></h4>
+                    <p>Nhật bình vàng của hoàng hậu, với những họa tiết thêu tay tinh xảo, biểu tượng của quyền uy và địa vị nơi cung cấm.</p>
+                    <p class="pull-right">500.000đ</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="xzoom.min.js"></script>
+    <!-- xZoom JavaScript -->
+
+    <script>
+        $(document).ready(function() {
+            // Initialize xZoom
+            $('.xzoom, .xzoom-gallery').xzoom({
+                zoomWidth: 400,
+                title: true,
+                tint: '#333',
+                Xoffset: 15
+            });
+        });
+        $(document).ready(function() {
+            $('.rating').rating();
+        });
+    </script>
+
+</body>
+
+</html>

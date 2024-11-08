@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Danh mục sản phẩm</title>
+    <!-- default styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme CSS files as mentioned below (and change the theme property of the plugin) -->
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- important mandatory libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
+
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- xZoom CSS -->
+    <link rel="stylesheet" href="xzoom.css">
+
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
+        * {
+	        padding: 0;
+	        margin: 0;
+	        box-sizing: border-box;
+        }
+        html {
+	        font-size: 10px;
+	        font-family: 'Montserrat', sans-serif;
+	        scroll-behavior: smooth;
+        }
+        /* Di chuyển container sang trái một chút */
+        .container {
+            margin-left: 60px;  /* Di chuyển container sang trái */
+        }
+        .discount-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .label-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .label-tag.new {
+            background-color: green;
+            color: white;
+        }
+
+        .label-tag.bestseller {
+            background-color: orange;
+            color: white;
+        }
+
+        
+        /* Đảm bảo phần tử thumbnail có định dạng tương đối để các nhãn hiển thị chính xác */
+        .thumbnail {
+            position: relative;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/c.png"
+                     alt="Logo" class="homepage-header-logo" height="30" style="margin-top:-5px">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Dịch vụ <span class="sr-only">(current)</span></a></li>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Danh mục <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cho thuê trang phục</a></li>
+                        <li><a href="#">Chụp ngoại cảnh</a></li>
+                        <li><a href="#">Chụp studio concept riêng</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Phụ kiện</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Mobile search form -->
+            <form class="visible-xs-inline-block" style="margin-top:10px">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Gõ vào đây...">
+                </div>
+            </form>
+
+            <!-- Desktop search form -->
+            <form class="navbar-form navbar-left hidden-xs">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Gõ vào đây...">
+                </div>
+                <button type="submit" class="btn btn-default my-button">Tìm kiếm</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="badge pull-right">7</span>
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </a>
+                </li>
+                <li><a href="account.html"><i class="glyphicon glyphicon-user"></i></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Carousel -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="./img/15 (1).jpg" alt="..." style="display: block; margin: 0 auto;">
+            <div class="carousel-caption">Màu in tươi sáng</div>
+        </div>
+        <div class="item">
+            <img src="./img/13.jpg" alt="..." style="display: block; margin: 0 auto;">
+            <div class="carousel-caption">Gói chụp chuyên nghiệp</div>
+        </div>
+        <div class="item">
+            <img src="./img/14.jpg" alt="..." style="display: block; margin: 0 auto;" width="1151" height="335">
+            <div class="carousel-caption">Đường thêu tỉ mỉ</div>
+        </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Trước</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Sau</span>
+    </a>
+</div>
+
+<!-- Categories and Products Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <h3>Trang phục</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">14</span>Áo tấc
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">7</span>Nhật Bình
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">5</span>Mãng Bào
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">2</span>Giao lĩnh
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <h3>Hiện có</h3>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <span class="discount-tag">-20%</span>
+                        <span class="label-tag new">Được quan tâm</span>
+                        <img class="xzoom" src="./img/sp-1.jpg" alt="">
+                        <div class="add-to-cart">
+                            <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+                        </div>
+                        <div class="caption">
+                            <h4 class="pull-right">500.000đ</h4>
+                            <h4>
+                                <a href="ecommerce-detail.html">Nhật Bình đỏ</a>
+                            </h4>
+                            <p>Nhật bình đỏ đô thêu tay với những họa tiết tinh xảo như một tác phẩm nghệ thuật, tôn lên vẻ đẹp truyền thống và quý phái.</p>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <a href="ecommerce-detail.html">5 đánh giá</a>
+                                </p>
+                                <p>
+                                    <!--Thay thế star bằng thư viện bootstrap-star-rating-->
+                                    <input id="input-id" type="text" class="rating" data-size="sm">
+                                </p>
+                            </div>
+                            <!-- Thanh trạng thái sắp bán hết-->
+                            <div class="progress">
+                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 95%;">
+                                    Sắp hết
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <span class="discount-tag">-10%</span>
+                        <span class="label-tag bestseller">Mới</span>
+                        <img class="xzoom" src="./img/sp-2.jpg" alt="">
+                        <div class="add-to-cart">
+                            <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+                        </div>
+                        <div class="caption">
+                            <h4 class="pull-right">500.000đ</h4>
+                            <h4>
+                                <a href="ecommerce-detail.html">Nhật Bình vàng</a>
+                            </h4>
+                            <p> Nhật bình vàng của hoàng hậu, với những họa tiết thêu tay tinh xảo, biểu tượng của quyền uy và địa vị nơi cung cấm.</p>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <a href="ecommerce-detail.html">5 đánh giá</a>
+                                </p>
+                                <p>
+                                    <!--Thay thế star bằng thư viện bootstrap-star-rating-->
+                                    <input id="input-id" type="text" class="rating" data-size="sm">
+                                </p>
+                            </div>
+                            <!-- Thanh trạng thái đã bán 6 -->
+                            <div class="progress">
+                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 40%;">
+                                    Đã bán 6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <span class="discount-tag">-15%</span>
+                        <img class="xzoom" src="./img/sp-3.jpg" alt="">
+                        <div class="add-to-cart">
+                            <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+                        </div>
+                        <div class="caption">
+                            <h4 class="pull-right">300.000đ</h4>
+                            <h4>
+                                <a href="ecommerce-detail.html">Ngũ thân cam</a>
+                            </h4>
+                            <p>Áo ngũ thân màu cam rực rỡ với những họa tiết in màu sắc nét và ý nghĩa, tạo nên một tổng thể đầy sức sống.</p>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <a href="ecommerce-detail.html">4 đánh giá</a>
+                                </p>
+                                <p>
+                                    <!--Thay thế star bằng thư viện bootstrap-star-rating-->
+                                    <input id="input-id" type="text" class="rating" data-size="sm">
+                                </p>
+                            </div>
+                            <!-- Thanh trạng thái đã bán 2 -->
+                            <div class="progress">
+                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 10%;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- xZoom JS -->
+<script src="xzoom.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.xzoom').each(function() {
+            $(this).xzoom({zoomWidth: 300, title: true, tint: '#333', lens: true}); // Kích hoạt lens mode
+        });
+        $(document).ready(function() {
+            $('.rating').rating();
+        });
+    });
+    </script>
+    
+</body>
+</html>
